@@ -15,7 +15,7 @@ User-agent: DuckDuckBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.jameela-contracting.com/sitemap.xml
+Sitemap: https://jameela-contracting-v3.vercel.app/sitemap.xml
 
 # Crawl-delay for general bots
 Crawl-delay: 1
