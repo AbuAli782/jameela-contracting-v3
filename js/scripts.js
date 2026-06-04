@@ -180,12 +180,19 @@
         const details = document.getElementById('contact-message')?.value || 'لا يوجد تفاصيل إضافية';
 
         // Format message
-        let waMessage = `*طلب عرض سعر جديد (مؤسسة جميلة للمقاولات)*\n\n`;
-        waMessage += `👤 *الاسم:* ${name}\n`;
-        waMessage += `📞 *الجوال:* ${phone}\n`;
-        waMessage += `🛠️ *الخدمة:* ${serviceText}\n`;
-        waMessage += `📍 *الحي:* ${district}\n\n`;
-        waMessage += `📝 *تفاصيل المشروع:* \n${details}`;
+        let waMessage = `*مؤسسة جميلة للمقاولات العامة بالرياض*\n`;
+        waMessage += `*طلب عرض سعر جديد*\n`;
+        waMessage += `---------------------------------------\n\n`;
+        waMessage += `*بيانات العميل:*\n`;
+        waMessage += `• الاسم: ${name}\n`;
+        waMessage += `• الجوال: ${phone}\n\n`;
+        waMessage += `*تفاصيل الخدمة:*\n`;
+        waMessage += `• الخدمة المطلوبة: ${serviceText}\n`;
+        waMessage += `• موقع المشروع (الحي): ${district}\n\n`;
+        waMessage += `*تفاصيل إضافية عن المشروع:*\n`;
+        waMessage += `${details}\n\n`;
+        waMessage += `---------------------------------------\n`;
+        waMessage += `_تم إرسال هذا الطلب عبر الموقع الإلكتروني للمؤسسة_`;
 
         const encodedText = encodeURIComponent(waMessage);
         const waUrl = `https://wa.me/966538430747?text=${encodedText}`;
