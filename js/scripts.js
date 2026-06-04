@@ -160,26 +160,53 @@
       });
     }
 
-    /* ─── 9. Contact Form ─────────────────────────────────── */
+    /* ─── 9. Contact Form (WhatsApp Redirect) ────────────── */
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        // Check native validation
+        if (!contactForm.checkValidity()) {
+          contactForm.reportValidity();
+          return;
+        }
+
+        const name = document.getElementById('contact-name')?.value || '';
+        const phone = document.getElementById('contact-phone')?.value || '';
+        const serviceSelect = document.getElementById('contact-service');
+        const serviceText = serviceSelect && serviceSelect.value ? serviceSelect.options[serviceSelect.selectedIndex].text : 'غير محدد';
+        const district = document.getElementById('contact-district')?.value || 'غير محدد';
+        const details = document.getElementById('contact-message')?.value || 'لا يوجد تفاصيل إضافية';
+
+        // Format message
+        let waMessage = `*طلب عرض سعر جديد (مؤسسة جميلة للمقاولات)*\n\n`;
+        waMessage += `👤 *الاسم:* ${name}\n`;
+        waMessage += `📞 *الجوال:* ${phone}\n`;
+        waMessage += `🛠️ *الخدمة:* ${serviceText}\n`;
+        waMessage += `📍 *الحي:* ${district}\n\n`;
+        waMessage += `📝 *تفاصيل المشروع:* \n${details}`;
+
+        const encodedText = encodeURIComponent(waMessage);
+        const waUrl = `https://wa.me/966538430747?text=${encodedText}`;
+
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         if (submitBtn) {
-          submitBtn.textContent = 'تم الإرسال ✓';
+          submitBtn.textContent = 'جاري التوجيه للواتساب...';
           submitBtn.disabled = true;
-          submitBtn.style.background = '#1a9e60';
+          submitBtn.style.background = '#25d366';
         }
+
         setTimeout(function () {
-          alert('شكراً! تم إرسال رسالتك بنجاح. سنتواصل معك قريباً على الرقم المُدخل.');
-          contactForm.reset();
+          window.open(waUrl, '_blank');
+          
           if (submitBtn) {
-            submitBtn.textContent = 'إرسال الرسالة';
+            submitBtn.textContent = 'إرسال الطلب';
             submitBtn.disabled = false;
             submitBtn.style.background = '';
           }
-        }, 600);
+          contactForm.reset();
+        }, 800);
       });
     }
 
