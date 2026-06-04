@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jameela-contracting-v3.vercel.app/</loc>
     <lastmod>2026-06-04T15:30:00+00:00</lastmod>
     <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://jameela-contracting-v3.vercel.app/images/%D8%B5%D9%88%D8%B1%D8%A92.webp</image:loc>
+      <image:caption>حفار بوكلين ثقيل يقوم بأعمال حفر وتجهيز أساسات مشروع بناء في الرياض</image:caption>
+      <image:title>مقاول حفر بالرياض</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jameela-contracting-v3.vercel.app/images/%D8%B5%D9%88%D8%B1%D8%A91.webp</image:loc>
+      <image:caption>حفر أساسات برج سكني بمنطقة العليا في الرياض باستخدام بوكلين ثقيل</image:caption>
+      <image:title>حفر أساسات بالرياض</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jameela-contracting-v3.vercel.app/images/%D8%AA%D8%B1%D9%8A%D9%84%D8%A7%D8%AA%20%D9%86%D9%82%D9%84.webp</image:loc>
+      <image:caption>ترحيل مخلفات البناء والأنقاض الخرسانية بالرياض بواسطة شاحنات تريلا ثقيلة</image:caption>
+      <image:title>ترحيل مخلفات بالرياض</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jameela-contracting-v3.vercel.app/images/%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%AD%D9%81%D8%B1.webp</image:loc>
+      <image:caption>معدات الحفر والردم والتمهيد لمؤسسة جميلة للمقاولات بالرياض</image:caption>
+      <image:title>معدات مقاولات الرياض</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://jameela-contracting-v3.vercel.app/index.html</loc>
