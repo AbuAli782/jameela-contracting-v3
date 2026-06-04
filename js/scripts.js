@@ -116,6 +116,22 @@
       });
     });
 
+    // Support for .faq-q on individual service pages
+    const faqQElements = document.querySelectorAll('.faq-q');
+    faqQElements.forEach(function (q) {
+      q.addEventListener('click', function () {
+        const a = q.nextElementSibling;
+        const arrow = q.querySelector('span');
+        if (a.style.display === 'none' || a.style.display === '') {
+          a.style.display = 'block';
+          if (arrow) arrow.textContent = '▲';
+        } else {
+          a.style.display = 'none';
+          if (arrow) arrow.textContent = '▼';
+        }
+      });
+    });
+
     /* ─── 6. Back to Top ──────────────────────────────────── */
     if (backToTop) {
       backToTop.addEventListener('click', function () {
