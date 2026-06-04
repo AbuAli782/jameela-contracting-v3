@@ -8,7 +8,7 @@
   <!-- ═══ Primary SEO Meta ═══════════════════════════════════ -->
   <title>حفر عمائر بالرياض | مؤسسة جميلة للمقاولات بالرياض - 0538430747</title>
   <meta name="description" content="خدمات حفر عمائر سكنية وتجارية بالرياض وحفر بدرومات عميقة وتدعيم جوانب الحفر بأعلى معايير الأمان والسلامة الإنشائية.">
-  <meta name="keywords" content="حفر عمائر بالرياض, حفر عمارة بالرياض, حفر بدروم بالرياض, مقاول حفر عمائر, تدعيم جوانب الحفر بالرياض">
+  <meta name="keywords" content="حفر عمائر بالرياض, hفر عمارة بالرياض, حفر بدروم بالرياض, مقاول حفر عمائر, تدعيم جوانب الحفر بالرياض">
   <meta name="author" content="مؤسسة جميلة للمقاولات العامة">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="language" content="Arabic">
@@ -81,7 +81,7 @@
 
     .detail-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: clamp(2rem, 4vw, 3rem);
       padding: clamp(3rem, 6vw, 5rem) 0;
     }
@@ -114,32 +114,40 @@
       margin: 1.5rem 0 2.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: 1.2rem;
     }
     .features-list li {
       display: flex;
-      gap: 0.6rem;
+      gap: 0.75rem;
       color: #16202f;
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 0.98rem;
+      font-weight: 700;
       align-items: flex-start;
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: 8px;
+      border-right: 4px solid #c98519;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
     .features-list li svg {
       fill: #c98519;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       margin-top: 2px;
       flex-shrink: 0;
     }
     
     .detail-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .sidebar-widget {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
       padding: 1.5rem;
-      position: sticky;
-      top: 100px;
-      align-self: start;
+      box-shadow: 0 4px 12px rgba(20,33,61,0.03);
     }
     .sidebar-title {
       font-size: 1.15rem;
@@ -148,10 +156,21 @@
       margin-bottom: 1rem;
       border-bottom: 1px solid #e2e8f0;
       padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sidebar-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: #c98519;
+      display: inline-block;
+      border-radius: 2px;
     }
     .sidebar-img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 1.25rem;
@@ -177,7 +196,7 @@
     }
     .btn-wa:hover { opacity: 0.9; }
     .btn-tel {
-      background: #c98519;
+      background: #14213d;
       color: #fff !important;
       display: flex;
       align-items: center;
@@ -191,6 +210,51 @@
     }
     .btn-tel:hover { opacity: 0.9; }
 
+    /* Sidebar quick-jump navigation menu */
+    .quick-jump-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 380px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #c98519 #e2e8f0;
+    }
+    .quick-jump-list::-webkit-scrollbar { width: 5px; }
+    .quick-jump-list::-webkit-scrollbar-thumb { background: #c98519; border-radius: 999px; }
+    .quick-jump-list li { margin-bottom: 0.5rem; }
+    .quick-jump-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.8rem;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      color: #5a6476;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .quick-jump-list a:hover,
+    .quick-jump-list a.active {
+      border-color: #c98519;
+      background: #fdf6ec;
+      color: #c98519;
+      transform: translateX(-3px);
+    }
+    .quick-jump-list a::after {
+      content: '➔';
+      font-size: 0.75rem;
+      opacity: 0.5;
+      transition: transform 0.2s;
+    }
+    .quick-jump-list a:hover::after {
+      transform: translateX(-2px);
+      opacity: 1;
+    }
+
     .faq-sec h3 {
       font-size: 1.35rem;
       font-weight: 800;
@@ -203,9 +267,10 @@
       border-radius: 8px;
       margin-bottom: 0.75rem;
       overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
     .faq-q {
-      padding: 1rem;
+      padding: 1.1rem;
       font-weight: 700;
       color: #14213d;
       cursor: pointer;
@@ -213,16 +278,18 @@
       justify-content: space-between;
       align-items: center;
       background: #fafbff;
+      transition: background 0.2s;
     }
+    .faq-q:hover { background: #f1f5f9; }
     .faq-a {
-      padding: 1rem;
+      padding: 1.1rem;
       color: #5a6476;
-      line-height: 1.7;
+      line-height: 1.8;
       border-top: 1px solid #e2e8f0;
       background: #fff;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .detail-grid { grid-template-columns: 1fr; }
       .features-list { grid-template-columns: 1fr; }
     }
@@ -335,9 +402,43 @@
       <h2>عن خدمة حفر عمائر بالرياض بالرياض</h2>
       <p>تتميز العمائر السكنية والتجارية بالحاجة لحفر عميق، خصوصاً في حال وجود بدروم (قبو) أو طوابق مواقف سيارات تحت الأرض. تقدم مؤسسة جميلة للمقاولات خدمات حفر العمائر بالرياض بأحدث البكلينات مع إمكانية تأمين وتدعيم الجوانب وتجفيف المياه.</p>
       
+      
+      <div style="margin: 2rem 0; background: #fafbff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(20,33,61,0.02);">
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #14213d; margin-bottom: 1rem; border-bottom: 2px solid #c98519; padding-bottom: 0.5rem;">جدول المواصفات الفنية للخدمة بالرياض</h3>
+        <table style="width: 100%; border-collapse: collapse; text-align: right; font-size: 0.95rem;">
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <th style="padding: 0.75rem 0.5rem; color: #14213d; font-weight: 800; width: 35%;">نوع المعدات المستخدمة</th>
+            <td style="padding: 0.75rem 0.5rem; color: #5a6476;">حفارات جنزير (بوكلين)، شواكيش هيدروليكية، شيولات ثقيلة</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <th style="padding: 0.75rem 0.5rem; color: #14213d; font-weight: 800;">طبيعة التربة / المواد</th>
+            <td style="padding: 0.75rem 0.5rem; color: #5a6476;">تربة صخرية، تربة جبلية صلبة، تربة رملية</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <th style="padding: 0.75rem 0.5rem; color: #14213d; font-weight: 800;">مدة التنفيذ المتوقعة</th>
+            <td style="padding: 0.75rem 0.5rem; color: #5a6476;">2 - 5 أيام (حسب مساحة وعمق المشروع)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <th style="padding: 0.75rem 0.5rem; color: #14213d; font-weight: 800;">مناطق تقديم الخدمة</th>
+            <td style="padding: 0.75rem 0.5rem; color: #5a6476;">تغطية شاملة لجميع أحياء ومشاريع مدينة الرياض 24/7</td>
+          </tr>
+          <tr>
+            <th style="padding: 0.75rem 0.5rem; color: #14213d; font-weight: 800;">الالتزام بالمعايير</th>
+            <td style="padding: 0.75rem 0.5rem; color: #c98519; font-weight: bold;">مطابقة تامة لكود البناء السعودي (SBC) ومتطلبات السلامة</td>
+          </tr>
+        </table>
+      </div>
+    
+      
       <h2 style="margin-top: 2rem;">مميزات الخدمة ومواصفات العمل لدينا</h2>
       <ul class="features-list">
-                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>خبرة واسعة في الحفر العميق للبدرومات والأقبية حتى عدة مستويات.</span></li>\n        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>تنسيق هندسي كامل لتنفيذ سند وتدعيم جوانب الحفر لحماية الجيران والشارع.</span></li>\n        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>إزالة وترحيل آلاف الأمتار المكعبة من نواتج الحفر بسرعة وكفاءة عالية.</span></li>\n        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>استخدام أحدث أجهزة الليزر والمساحة لمتابعة استواء قاع الحفر والمناسيب.</span></li>\n        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>تأجير الحفارات الثقيلة واللوادر مع السائقين المحترفين للعمل بالموقع.</span></li>\n        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>الالتزام بجميع متطلبات رخص البناء والمخططات المعتمدة بالرياض.</span></li>\n
+                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>خبرة واسعة في الحفر العميق للبدرومات والأقبية حتى عدة مستويات.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>تنسيق هندسي كامل لتنفيذ سند وتدعيم جوانب الحفر لحماية الجيران والشارع.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>إزالة وترحيل آلاف الأمتار المكعبة من نواتج الحفر بسرعة وكفاءة عالية.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>استخدام أحدث أجهزة الليزر والمساحة لمتابعة استواء قاع الحفر والمناسيب.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>تأجير الحفارات الثقيلة واللوادر مع السائقين المحترفين للعمل بالموقع.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>الالتزام بجميع متطلبات رخص البناء والمخططات المعتمدة بالرياض.</span></li>
+
       </ul>
 
       <div class="faq-sec" style="margin-top: 3rem;">
@@ -355,23 +456,53 @@
     </div>
 
     <!-- SIDEBAR -->
-    <aside class="detail-sidebar">
-      <div class="sidebar-title">طلب الخدمة والاستفسار</div>
-      <img src="images/صورة2.webp" alt="حفر عمائر بالرياض بالرياض" class="sidebar-img" loading="lazy">
-      <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">يسعدنا تواصلكم معنا للحصول على عروض أسعار تنافسية ومجانية لتنفيذ كافة الأعمال في الرياض.</p>
-      <div class="sidebar-cta">
-        <a href="https://wa.me/966538430747?text=مرحبا%20أريد%20الاستفسار%20عن%20حفر عمائر بالرياض" class="btn-wa" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-          تواصل عبر واتساب
-        </a>
-        <a href="tel:+966538430747" class="btn-tel">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-          اتصال مباشر
-        </a>
+    <div class="detail-sidebar">
+      <!-- Widget 1: Jump List -->
+      <div class="sidebar-widget">
+        <div class="sidebar-title">تصفح خدمات حفر الأخرى</div>
+        <ul class="quick-jump-list">
+                    <li><a href="excavation-contractor-riyadh.html">مقاول حفر بالرياض</a></li>
+          <li><a href="foundation-excavation-riyadh.html">حفر أساسات بالرياض</a></li>
+          <li><a href="base-excavation-riyadh.html">حفر قواعد بالرياض</a></li>
+          <li><a href="tank-excavation-riyadh.html">حفر خزانات أرضية بالرياض</a></li>
+          <li><a href="septic-excavation-riyadh.html">حفر بيارات بالرياض</a></li>
+          <li><a href="water-well-excavation-riyadh.html">حفر آبار تجميع المياه بالرياض</a></li>
+          <li><a href="sewer-network-excavation-riyadh.html">حفر شبكات الصرف الصحي بالرياض</a></li>
+          <li><a href="water-line-excavation-riyadh.html">حفر خطوط المياه بالرياض</a></li>
+          <li><a href="electrical-duct-excavation-riyadh.html">حفر تمديدات الكهرباء بالرياض</a></li>
+          <li><a href="telecom-duct-excavation-riyadh.html">حفر تمديدات الاتصالات بالرياض</a></li>
+          <li><a href="residential-excavation-riyadh.html">حفر مشاريع سكنية بالرياض</a></li>
+          <li><a href="villa-excavation-riyadh.html">حفر فلل بالرياض</a></li>
+          <li><a href="building-excavation-riyadh.html" class="active">حفر عمائر بالرياض</a></li>
+          <li><a href="warehouse-excavation-riyadh.html">حفر مستودعات بالرياض</a></li>
+          <li><a href="factory-excavation-riyadh.html">حفر مصانع بالرياض</a></li>
+          <li><a href="commercial-excavation-riyadh.html">حفر مواقع تجارية بالرياض</a></li>
+          <li><a href="deep-excavation-riyadh.html">حفر عميق بالرياض</a></li>
+          <li><a href="excavation-grading-riyadh.html">حفر وتسوية مواقع البناء بالرياض</a></li>
+          <li><a href="land-excavation-riyadh.html">حفر أراضي فضاء بالرياض</a></li>
+          <li><a href="infrastructure-excavation-riyadh.html">حفر للبنية التحتية بالرياض</a></li>
+
+        </ul>
       </div>
-    </aside>
-  </div>
-</main>
+
+      <!-- Widget 2: Contact CTA -->
+      <div class="sidebar-widget">
+        <div class="sidebar-title">طلب الخدمة والاستفسار</div>
+        <img src="images/صورة2.webp" alt="حفارات ثقيلة وشيولات تعمل على حفر وتسوية أساسات مشروع بناء في الرياض" class="sidebar-img" loading="lazy">
+        <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.25rem;">يسعدنا تواصلكم معنا للحصول على عروض أسعار تنافسية ومجانية لتنفيذ كافة الأعمال في الرياض.</p>
+        <div class="sidebar-cta">
+          <a href="https://wa.me/966538430747?text=مرحبا%20أريد%20الاستفسار%20عن%20حفر عمائر بالرياض" class="btn-wa" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            تواصل عبر واتساب
+          </a>
+          <a href="tel:+966538430747" class="btn-tel">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            اتصال مباشر
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
 
 <!-- FOOTER -->
 <footer id="site-footer" role="contentinfo">
